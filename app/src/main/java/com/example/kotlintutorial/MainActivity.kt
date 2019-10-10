@@ -2,8 +2,8 @@ fun main(args: Array<String>) {
     println("Hello World")
     println("My first Kotlin program")
 
-    var tim: String
-    tim = "Tim Buchalka"
+    var jim: "Jmae T Kirk"
+    val tim = "Tim Buchalka"
     println(tim)
 
     var timWeeklySalary: Int = 32
@@ -26,6 +26,6 @@ fun main(args: Array<String>) {
     println("$week weeks is $years years")
 
     println("My name is $tim")
-    println("I can print \$tim")
+    println("Jim is $jim")
 
 }
