@@ -1,3 +1,5 @@
+import com.example.kotlintutorial.Loot
+import com.example.kotlintutorial.LootType
 import com.example.kotlintutorial.Player
 import com.example.kotlintutorial.Weapon
 
@@ -25,7 +27,7 @@ fun main(args: Array<String>){
     println(gr8.weapon.damageInflicted)
 
     tim.weapon = Weapon(name = "Sword", damageInflicted = 10)
-    //println(tim.weapon.name)
+    // println(tim.weapon.name)
     tim.show()
 
     louise.weapon = tim.weapon
@@ -35,4 +37,8 @@ fun main(args: Array<String>){
     //println(tim.weapon.name)
     tim.show()
 
+    val redPotion = Loot(name = "Red Potion", type = LootType.POTION, value = 7.50)
+    tim.inventory.add(redPotion)
+    tim.showInventory()
+    println(tim.toString())
 }
