@@ -4,7 +4,7 @@ import com.example.kotlintutorial.Player
 import com.example.kotlintutorial.Weapon
 
 fun main(args: Array<String>){
-    /*val tim = Player(name = "Tim")
+    val tim = Player(name = "Tim")
     tim.show()
 
     val louise = Player(name = "Louise", level = 5)
@@ -38,23 +38,26 @@ fun main(args: Array<String>){
     tim.show()
 
     val redPotion = Loot(name = "Red Potion", type = LootType.POTION, value = 7.50)
-    tim.inventory.add(redPotion)
+    tim.getLoot(redPotion)
     val chestArmor = Loot(name = "+3 Chest Armor", type = LootType.ARMOR, value = 80.00)
+    tim.getLoot(chestArmor)
     tim.showInventory()
 
-    tim.inventory.add(Loot(name = "Ring of Protection +2", type = LootType.RING, value = 40.25))
-    tim.inventory.add(Loot(name = "Invisibility Potion", type = LootType.POTION, value = 35.95))
+    tim.getLoot((Loot(name = "Ring of Protection +2", type = LootType.RING, value = 40.25)))
+    tim.getLoot(Loot(name = "Invisibility Potion", type = LootType.POTION, value = 35.95))
     tim.showInventory()
 
-    println(tim.toString())*/
-
-    for (i in 10 downTo 0 step 2){
-        println("$i squared is ${i * i}")
+    if (tim.dropLoot(redPotion)){
+        tim.showInventory()
+    }else{
+        println("you don't have a ${redPotion.name}")
     }
 
-    for (value in 3..100 step 3){
-        if (value % 5 ==0){
-            println(value)
-        }
+    val bluePotion = Loot(name = "Blue Potion", type = LootType.POTION, value = 6.00)
+    if (tim.dropLoot(bluePotion)){
+        tim.showInventory()
+    }else{
+        println("you don't have ${bluePotion.name}")
     }
+
 }

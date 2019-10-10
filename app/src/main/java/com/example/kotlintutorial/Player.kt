@@ -2,7 +2,7 @@ package com.example.kotlintutorial
 
 class Player(val name: String, var level: Int = 1, var lives: Int = 3, var score: Int = 0) {
     var weapon: Weapon = Weapon(name = "Fist", damageInflicted = 1)
-    var inventory = ArrayList<Loot>()
+    private val inventory = ArrayList<Loot>()
 
 
     fun show(){
@@ -21,6 +21,19 @@ class Player(val name: String, var level: Int = 1, var lives: Int = 3, var score
             score: $score
             weapon: ${weapon}
         """
+    }
+
+    fun  getLoot (item: Loot){
+        inventory.add(item)
+    }
+
+    fun  dropLoot(item: Loot):Boolean{
+        return if (inventory.contains(item)){
+            inventory.remove(item)
+            true
+        }else{
+            false
+        }
     }
 
     fun showInventory(){
