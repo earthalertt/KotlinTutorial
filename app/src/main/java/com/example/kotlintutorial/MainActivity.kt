@@ -1,34 +1,27 @@
 import com.example.kotlintutorial.*
 
-fun main(args: Array<String>){
+fun main(args: Array<String>) {
 
-    /*val uglyTroll = Troll(name = "Ugly Troll")
-    println(uglyTroll)
-    uglyTroll.takeDamage(damage = 30)
-    println(uglyTroll)
+    // for (i in 1 .. 10){
+    val dracula = VampyreKing(name = "Dracula")
+    println(dracula)
 
-    val vlad = Vampyre(name = "Vlad", hitPoints = 2)
-    println(vlad)
-    vlad.takeDamage(8)
-    println(vlad)
-    */
+    dracula.lives = 0
 
-    for (i in 1 .. 10){
-        val dracula = VampyreKing(name = "Dracula")
-        println(dracula)
-        while (dracula.lives > 0) {
-            if (dracula.dodges()){
-                continue;
-            }
-            if (dracula.runAway()){
-                println("Dracula ran awy")
-                break
-            }else {
-                dracula.takeDamage(80)
-            }
+    do {
+        if (dracula.dodges()) {
+            dracula.lives += 1
+            continue;
         }
-        println("---------------------------")
-    }
+        if (dracula.runAway()) {
+            println("Dracula ran awy")
+            break
+        } else {
+            dracula.takeDamage(80)
+        }
+    }while (dracula.lives > 0)
+    println("---------------------------")
+    //  }
 
 
     /*val conan = Player(name = "Conan")
