@@ -7,7 +7,10 @@ class Player (val name: String, val level: Int = 1, var  lives: Int = 3, var sco
         println("""
             name: $name
             lives: $lives
+            level: $level
             score: $score
+            weapon: ${weapon.name}
+            damage: ${weapon.damageInflicted}
         """.trimIndent())
     }
 }
