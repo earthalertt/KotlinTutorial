@@ -60,4 +60,10 @@ fun main(args: Array<String>){
         println("you don't have ${bluePotion.name}")
     }
 
+    if (tim.dropLoot(item = "Invisibility Potion")){
+        tim.showInventory()
+    }else{
+        println("You don't have an Invisibility Potion")
+    }
+
 }
