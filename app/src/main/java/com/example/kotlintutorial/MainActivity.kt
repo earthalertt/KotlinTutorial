@@ -1,34 +1,21 @@
+import com.example.kotlintutorial.Player
+
 fun main(args: Array<String>) {
-    /*val lives = 3
 
-    var isGameOver = (lives < 1)
-    println(isGameOver)
+    fun main(args: Array<String>){
+        val tim = Player(name = "Tim")
+        /*println(tim.name)
+    println(tim.lives)
+    println(tim.level)
+    println(tim.score)*/
+        tim.show()
 
-    if (isGameOver){
-        println("Game Over!")
-    }else{
-        println("You're still alive!")
-    }*/
+        val  louise = Player(name = "Louise", level =  5)
+        louise.show()
 
-    println("How old are you: ")
-    val age = readLine()!!.toInt()
-    println("age is $age")
-
-    val  message: String
-    message = when {
-        age <18 ->"You're too young to vote"
-        age == 100 -> "Congratulations"
-        else -> "You can vote"
+        val gr8 = Player(name = "gr8", level = 4, lives = 8)
+        val one2watch = Player(name = "Ace", level = 2, lives = 5, score = 1000)
+        gr8.show()
+        one2watch.show()
     }
-
-    /* message: String
-    message = if (age < 18){
-        "You're too young to vote"
-    }else if (age == 100){
-        "Congratulations"
-    }else{
-        "You can vote"
-    }*/
-
-    println(message)
 }
